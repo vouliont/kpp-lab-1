@@ -36,7 +36,7 @@ for (var i = 0; i < field.length; i++) {
 
     newStep();
     printField(new_field);
-  }, 500);
+  }, 350);
 })();
 
 function newStep() {
@@ -74,10 +74,16 @@ function neighbor(i, j) {
 }
 
 function printField(field) {
+  var output_field = '';
   for (var i = 0; i < field.length; i++) {
     for (var j = 0; j < field[i].length; j++) {
-      process.stdout.write((field[i][j]) ? ('■') : ('o'));
+      // process.stdout.write((field[i][j]) ? ('■') : (' '));
+      // process.stdout.write(' ');
+      output_field += ((field[i][j]) ? ('■') : ('o'));
     }
-    process.stdout.write('\n');
+    // process.stdout.write('\n');
+    output_field += '\n';
   }
+
+  process.stdout.write(output_field);
 }
